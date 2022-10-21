@@ -57,8 +57,8 @@ class Player:
          for x in range(len(self.playerArr[i])):
             self.playerArr[i][x] = "?"
       
-      for elem in arr:
-         print(elem)
+      # for elem in arr:
+      #    print(elem)
 
    def playerMove(self,matrixArr):
       # sys("cls")
@@ -67,7 +67,7 @@ class Player:
       
       x = int(input("Ingrese la pos de fila: ")) - 1
       y = int(input("Ingrese la pos de la columna: ")) - 1
-      print(matrixArr[x][y])
+      # print(matrixArr[x][y])
 
       if matrixArr[x][y] == "ñ":
          self.playerArr[x][y] = 2
@@ -89,8 +89,8 @@ def init():
    while ver:
       ver = player.playerMove(matrix.arr)
 
-   for elem in matrix.arr:
-      print(elem)
+   # for elem in matrix.arr:
+   #    print(elem)
 
 init()
 
