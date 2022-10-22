@@ -1,7 +1,6 @@
 from random import randint
 from copy import deepcopy
 from os import system as sys
-#N b
 
 class Matrix:
    def __init__(self,row,column):
