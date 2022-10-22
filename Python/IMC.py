@@ -1,4 +1,4 @@
-from os import system;
+from os import system
 import smtplib
 
 def emailVerify(email):
