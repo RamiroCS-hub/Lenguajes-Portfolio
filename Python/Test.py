@@ -55,6 +55,14 @@ class Board:
         if win:
             return win,self.ply    
 
+        win = True
+        for row in range(len(self.actualBoard)):
+            if self.actualBoard[row][2-row] != self.ply:
+                win = False
+                break
+        if win:
+            return win,self.ply
+
         return False,self.ply
 
     def fullBoard(self):
