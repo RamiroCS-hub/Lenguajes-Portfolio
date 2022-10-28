@@ -15,7 +15,7 @@ label = "WineVariety"
 # X = Valores de propiedades de todos los vinos, Y = Valores de tipos de vino(0,1,2)
 X, Y = data[features].values ,data[label].values
 # for n in range(0,4):
-#     print("Wine:",str(n+1),"Features:",list(X[n]),"\nWine type:",Y[n])
+#     print("Vino:",str(n+1),"Caracteristicas:",list(X[n]),"\nTipo de vino:",Y[n])
 # for col in features:
 #     data.boxplot(column=col, by=label, figsize=(7,7))
 #     plt.title(col)
@@ -23,7 +23,6 @@ X, Y = data[features].values ,data[label].values
 
 #Separo el 30% de la info para el testing,y 70% para entrenamiento
 xTrain,xTest,yTrain,yTest = train_test_split(X,Y, test_size=0.3, random_state=0)
-# print(xTrain.shape[0],xTest.shape[0])
 
 featureColumns = [0,1,2,3,4,5,6]
 featureTransformer = Pipeline(steps=[
