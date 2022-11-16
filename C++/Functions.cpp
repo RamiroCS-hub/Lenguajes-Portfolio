@@ -45,7 +45,7 @@ void passManager::posUser(void){
     int i=0;
     int pos2 = 0;
     bool flag;
-    //ME FIJO LA POS DEL NAME QUE INGRESO EL USUARIO
+    /* Me fijo la posición del nombre que ingreso el usuario en el archivo */
     for(string test : this->datosTest){
         if(test == this->nameU){
             pos2 = i;
@@ -53,6 +53,8 @@ void passManager::posUser(void){
         }
         i++;
     }
+    /* Si el usuario tenía una cuenta creada empiezo a escribir el archivo desde ahí,
+    si no tenía cuenta empiezo a escribir el archivo desde el final */
     if(flag == false){
         this->pos = 1;
         this->datosTest.insert(this->datosTest.begin(),this->nameU);
