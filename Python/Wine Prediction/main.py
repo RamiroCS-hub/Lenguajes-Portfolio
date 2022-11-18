@@ -7,19 +7,19 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 
-data = pd.read_csv('wine.csv')
+data = pd.read_csv("wine.csv")
 
 #Separo las caracteristicas de los vinos y el tipo de vino
 features = ['Alcohol','Malic_acid','Ash','Alcalinity','Magnesium','Phenols','Flavanoids','Nonflavanoids','Proanthocyanins','Color_intensity','Hue','OD280_315_of_diluted_wines','Proline']
 label = "WineVariety"
 # X = Valores de propiedades de todos los vinos, Y = Valores de tipos de vino(0,1,2)
 X, Y = data[features].values ,data[label].values
-# for n in range(0,4):
-#     print("Vino:",str(n+1),"Caracteristicas:",list(X[n]),"\nTipo de vino:",Y[n])
-# for col in features:
-#     data.boxplot(column=col, by=label, figsize=(7,7))
-#     plt.title(col)
-#     plt.show()
+for n in range(0,4):
+    print("Vino:",str(n+1),"Caracteristicas:",list(X[n]),"\nTipo de vino:",Y[n])
+for col in features:
+    data.boxplot(column=col, by=label, figsize=(7,7))
+    plt.title(col)
+    plt.show()
 
 #Separo el 30% de la info para el testing,y 70% para entrenamiento
 xTrain,xTest,yTrain,yTest = train_test_split(X,Y, test_size=0.3, random_state=0)
@@ -55,6 +55,7 @@ print("Recall:",recall_score(yTest, predictions, average='macro'))
 # Grafica en una matriz de confusion
 cm = confusion_matrix(yTest, predictions)
 classes = ['Variety A','Variety B','Variety C']
+
 #Interpolation sirve para estimar los puntos desconociddos entre 2 conocidos
 plt.imshow(cm, interpolation="nearest", cmap=plt.cm.Reds)
 plt.colorbar()
