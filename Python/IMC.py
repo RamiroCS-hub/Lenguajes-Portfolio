@@ -9,10 +9,12 @@ def emailVerify(email):
 
 def dataConvert(data):
     try:
-        data = float(data) #Convierto el dato a un float
+        data = float(data) # Convierto el dato a un float
     except:
-        return False, data #Si tira error la conv. devuelvo un false
-    return True, data #Si no hay error devuelvo un True
+        return False, data # Si tira error en la conversión devuelvo un false
+    return True, data # Si no hay error devuelvo un True
+
+    
 
 def intVerify(weight,height):
     #convierto los datos a flotante
